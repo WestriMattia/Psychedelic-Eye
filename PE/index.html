@@ -18,23 +18,24 @@
       <div class="fixed">
         <nav class="navbar">
           <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            <a href="javascript:void(0)" class="closebtn lin" onclick="closeNav()"
               >&times;</a
             >
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            <a class="lin" href="#">About</a>
+            <a class="lin" href="#">Services</a>
+            <a class="lin" href="#">Clients</a>
+            <a class="lin" href="#">Contact</a>
           </div>
 
           <!-- Use any element to open the sidenav -->
           <span onclick="openNav()"
             ><svg
             xmlns="http://www.w3.org/2000/svg"
-            width="45"
-            height="45"
+            width="35"
+            height="35"
             fill="white"
-            class="bi bi-cart3 carello"
+            class="bi bi-list 
+            "
             viewBox="0 0 16 16"
             >
               <path
@@ -43,14 +44,15 @@
               /></svg
           ></span>
 
-          <img src="images/logo.png" class="logo" />
+          
+            <img src="images/logo.png" class="logo">
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="45"
-            height="45"
+            width="35"
+            height="35"
             fill="white"
-            class="bi bi-cart3 carello"
+            class="bi bi-cart3"
             viewBox="0 0 16 16"
           >
             <path
@@ -59,9 +61,10 @@
           </svg>
         </nav>
       </div>
-      <div style="position:fixed;
-      width: 100%;">
-        <img src="images/home.gif" class="trip" />
+      <div class="divt">
+        <a href="./shop.php">
+          <img src="images/home.gif" class="trip">
+        </a>
       </div>
     </div>
   </body>

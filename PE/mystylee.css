@@ -9,13 +9,40 @@ body{
 .bottone{
     background-color: black;
 }
+
 .logo{
-    width: 35%;
+    width: 30%;
     height: auto;
+}
+
+.divt{
+  position:fixed;
+      width: 80%;
 }
 
 .trip{
   width: 100%;
+  margin-left: 12%;
+  margin-right: auto;
+  
+}
+
+@media only screen and (max-width: 1350px) {
+  .logo{
+    width: 390px;
+  }
+  .divt{
+  position:fixed;
+  width: 100%;
+  }
+
+  .trip{
+  width: 100%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
 }
 
 
@@ -34,7 +61,7 @@ body{
   }
   
   /* The navigation menu links */
-  .sidenav a {
+  .sidenav .lin {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -44,7 +71,7 @@ body{
   }
   
   /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
+  .sidenav .lin:hover {
     color: #f1f1f1;
   }
   
@@ -66,5 +93,5 @@ body{
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav .lin {font-size: 18px;}
   }
