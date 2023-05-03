@@ -1,17 +1,13 @@
-body {
-  background-color: black;
-}
-
-.navbars{
-  background-color: red;
-}
-
 .corpo{
   background-color: black;
     background-image: url("images/bgtrip.gif");
     background-repeat: repeat-y;
   background-attachment: fixed;
   background-size: 100%; 
+}
+
+body {
+  background-color: black;
 }
 
 .logo {
@@ -115,4 +111,47 @@ body {
   .sidenav .lin {
     font-size: 18px;
   }
+}
+
+.card {
+  display: inline-block;
+  width: 300px;
+  margin: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-image:url(images/slime.jpg);
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #3e8e41;
 }
