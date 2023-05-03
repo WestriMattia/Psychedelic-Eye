@@ -14,7 +14,7 @@
     <title>Home</title>
   </head>
   <body class="corpo">
-    <nav class="navbar">
+    <nav class="navbar" style="background-color: red;">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn lin" onclick="closeNav()"
           >&times;</a
@@ -28,11 +28,10 @@
       <!-- Use any element to open the sidenav -->
       <span onclick="openNav()"
         ><svg
-        style="background-color: black;"
         xmlns="http://www.w3.org/2000/svg"
         width="35"
         height="35"
-        fill="red"
+        fill="white"
         class="bi bi-list"
         viewBox="0 0 16 16"
         >
@@ -43,16 +42,15 @@
         </span>
 
         <a href="index.html">
-          <img src="images/logo.png" class="logo" style="background-color: red;">
+          <img src="images/logo.png" class="logo" >
           </a>
 
           <a href="cart.php">
             <svg
-        style="background-color: black;"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="35"
-            fill="red"
+            fill="white"
             class="bi bi-cart3"
             viewBox="0 0 16 16"
           >

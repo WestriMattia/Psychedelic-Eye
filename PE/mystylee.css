@@ -2,6 +2,10 @@ body {
   background-color: black;
 }
 
+.navbars{
+  background-color: red;
+}
+
 .corpo{
   background-color: black;
     background-image: url("images/bgtrip.gif");
