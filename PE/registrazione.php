@@ -13,7 +13,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="mystylee.css">
-<title>Accesso</title>
+<title>Registrazione</title>
     </head>
     <body class="corpo">
     <center>
@@ -48,49 +48,77 @@
     </a>
   </nav>
 
-    <div  class="regEntr">
-<h1 class="titolo">Accesso</h1>
-        <form action="accesso.php" methd="get" class="login">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
-            </div>
-            <br>
-            <a href="registrazione.php"  style="font-family: 'Roboto', sans-serif;">Se non possiedi un account registrati</a>
-            <br><br>
-            <button type="submit" class="btn btn-primary" style="font-family: 'Roboto', sans-serif;">Login</button>
-<br><br>
-        </form>
+        <hr class="riga">
+        <div  class="registra">
+        <h1 class="titolo">Registrazione</h1>
+            <form action="registrazione.php" methd="get" class="signin">
+                    <div class="form-group">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" name="email" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4" name="password" required>
+                    </div>
+                <div class="form-group">
+                    <label for="inputAddress">Indirizzo</label>
+                    <input type="text" class="form-control" id="inputAddress" name="indirizzo" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Telefono</label>
+                    <input type="number" class="form-control" id="inputAddress2" name="telefono" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputCity">Nome</label>
+                    <input type="text" class="form-control" id="inputCity" name="nome" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputZip">Cognome</label>
+                    <input type="text" class="form-control" id="inputZip" name="cognome" required>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Registrati</button>
+                <br><br>
 
-        <?php
-        if(isset($_SESSION)){
+            <?php
+    if (!empty($_GET)) {
+        $nome = $_GET["nome"];
+        $cognome = $_GET["cognome"];
+        $indirizzo = $_GET["indirizzo"];
+        $telefono = $_GET["telefono"];
+        $password = $_GET["password"];
+        $email = $_GET["email"];
+        $permessi = 1;
+
+
+        $host = "localhost";
+        $user = "root";
+        $pass = "Apritidai";
+        $db = "pe";
+        $mysql = new mysqli($host,$user,$pass,$db);
+        $result = $mysql ->query("select email from login where email = '$email'");
+        if ($result->num_rows >=1) {
+           echo "<p style='color:red'>Utente già presente</p>";
+        }else {
+            if(isset($_SESSION)){
             session_destroy();
+            session_start();
         }
+            $result = $mysql ->query("insert into login(nome,cognome,indirizzo,telefono,password,email) values ('$nome','$cognome','$indirizzo','$telefono','$password','$email')");
+            echo "<p style='color:green'>Utente registrato correttamente e accesso con esso eseguito</p>";
+            $result = $mysql ->query("select max(idUtente) from login");
+            $row = $result->fetch_assoc();
+            $_SESSION["idUtente"] = $row["max(idUtente)"];
 
-        session_start();
-    
-        if (!empty($_GET)) {
-            $email = $_GET["email"];
-            $password = $_GET["password"];
-
-            require_once('connessione.php');
-            
-            $result = $mysql ->query("select idUtente,email,password from login where email = '$email' and password = '$password'");
-            if ($result->num_rows ==1) {
-                $row = $result->fetch_assoc();
-                $_SESSION["idUtente"] = $row["idUtente"];
-                echo "<p style='color:green'>Accesso eseguito correttamente</p>";
-            }else {
-                echo "<p style='color:red'>Dati non corretti o utente inesistente</p>";
-            }
         }
-    ?>
-    </div>
-   
+        
+    }
+?>
+
+</form> 
+        </div>
        
     </center>
     

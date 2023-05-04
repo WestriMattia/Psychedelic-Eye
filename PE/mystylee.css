@@ -1,10 +1,10 @@
 .corpo{
   background-color: black;
-    background-image: url("images/bgtrip.gif");
-    background-repeat: repeat-y;
+    background-image: url("images/pe-bg.png");
+    background-repeat: repeat;
   background-attachment: fixed;
-  background-size: 100%; 
 }
+
 
 body {
   background-color: black;
@@ -154,4 +154,85 @@ body {
 
 .card button:hover {
   background-color: #3e8e41;
+}
+
+
+.regEntr {
+  min-height: 350px;
+  max-width: 400px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 13%;
+  background-color: white;
+}
+
+.sfondo {
+  background-color: aliceblue;
+}
+
+.login {
+  max-width: 300px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.titolo {
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.riga {
+  background-color: black;
+}
+
+.signin {
+  max-width: 400px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.registra {
+  min-height: 450px;
+  max-width: 500px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 25px;
+  background-color: white;
+}
+
+.carta {
+  height: 130px;
+  width: 130px;
+}
+.nrv {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  margin-top: 25px;
+}
+
+.nol {
+  display: flex;
+  justify-content: center;
+}
+
+table,
+th,
+td,
+tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 800px;
+}
+tbody {
+  border-radius: 10px;
+}
+th,
+td {
+  height: 20px;
+  width: 70px;
 }
