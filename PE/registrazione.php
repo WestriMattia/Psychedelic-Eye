@@ -36,7 +36,7 @@
     </span>
 
     <a href="index.html">
-      <img src="images/logo.png" class="logo" />
+      <img src="images/logo.png" class="logo2" />
     </a>
 
     <a href="cart.php">
@@ -93,11 +93,7 @@
         $permessi = 1;
 
 
-        $host = "localhost";
-        $user = "root";
-        $pass = "Apritidai";
-        $db = "pe";
-        $mysql = new mysqli($host,$user,$pass,$db);
+        require_once('connessione.php');
         $result = $mysql ->query("select email from login where email = '$email'");
         if ($result->num_rows >=1) {
            echo "<p style='color:red'>Utente già presente</p>";

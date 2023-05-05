@@ -36,7 +36,7 @@
     </span>
 
     <a href="index.html">
-      <img src="images/logo.png" class="logo" />
+      <img src="images/logo.png" class="logo2" />
     </a>
 
     <a href="cart.php">

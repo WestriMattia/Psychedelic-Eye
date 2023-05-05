@@ -2,7 +2,7 @@
 // Nome utente e password per l'accesso al database
 $servername = "localhost";
 $username = "root";
-$pass = "Apritidai";
+$pass = "";
 $dbname = "pe";
 
 $mysql = new mysqli($servername,$username,$pass,$dbname);

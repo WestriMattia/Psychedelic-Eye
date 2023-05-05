@@ -10,9 +10,13 @@
 body {
   background-color: black;
 }
-
 .logo {
-  margin-left: 16%;
+  margin-left: 17%;
+  width: 65%;
+  height: auto;
+}
+
+.logo2 {
   width: 65%;
   height: auto;
 }
@@ -34,7 +38,10 @@ body {
     width: 390px;
     margin-left: 0;
   }
-
+  .logo2 {
+    width: 390px;
+    margin-left: 0;
+  }
   .divt {
     position: fixed;
     width: 100%;
