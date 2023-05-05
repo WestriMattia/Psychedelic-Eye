@@ -14,7 +14,7 @@
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar" style="background-color: black;">
+    <nav class="navbar" style="background-color: black; ">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn lin" onclick="closeNav()">&times;</a>
         <a class="lin" href="accesso.php">Accedi</a>
@@ -42,8 +42,9 @@
     </nav>
 
       <center>
-
+<div>
       <?php
+            $tipo0='';
       require_once('connessione.php');
               
       $result = $mysql ->query("select idProdotto, colore, nome, prezzo, descrizione, 
@@ -65,21 +66,23 @@
             $m = $row['m'];
             $s = $row['s'];
             $foto1 = $row['foto1'];
-    
             // Crea la card per il prodotto
+            if($tipo=!$tipo0){
+              $tipo0=$tipo;
+              ?></div><div>
+              <h2 style="color: #4CAF50;"><?php echo $row['tipo']; ?></h2>"<?php
+            }
             echo "<div class='card'>";
-            header("Content-type: image/png");
-            echo $row['foto1'];
-            echo "<img src='$foto1' class='card-img-top' alt='$nome'>";
+            ?>
+            
+            <img src='./images/<?php echo $row['foto1']; ?>' class='card-img-top' alt='$nome'>
+            <?php
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>$nome</h5>";
-            echo "<p class='card-text'>$descrizione</p>";
             echo "<ul class='list-group list-group-flush'>";
-            echo "<li class='list-group-item'><b>Prezzo:</b> $prezzo €</li>";
-            echo "<li class='list-group-item'><b>Colore:</b> $colore</li>";
-            echo "<li class='list-group-item'><b>Taglie disponibili:</b> XL: $xl, L: $l, M: $m, S: $s</li>";
-            echo "</ul>";
-            echo "<a href='#' class='btn btn-primary'>Acquista</a>";
+            echo "<b>Prezzo:</b> $prezzo €";
+            echo "</ul> <br>";
+            echo "<a href='#' class='btn btn-success'>Acquista</a>";
             echo "</div>";
             echo "</div>";
         }
@@ -87,65 +90,8 @@
         echo "<p style='color:red'>Non ci sono prodotti nello shop al momento :(</p>";
     }
 ?>
-
+</div>
         
-        <div>
-          <h2 style="color: #4CAF50;">Magliette con Logo</h2>
-        <div class="card">
-          <img src="images/magliaNera-removebg-preview.png" alt="Product 1">
-          <h3>Maglietta nera</h3>
-          <p>Maglietta nera classica con logo</p>
-          <button>Scopri...</button>
-        </div>
-        <div class="card">
-          <img src="images/MagliaVerde-removebg-preview.png" alt="Product 2">
-          <h3>Maglietta verde</h3>
-          <p>Maglietta verde classica con logo</p>
-          <button>Scopri...</button>
-        </div>
-        <div class="card">
-          <img src="images/MagliaBlu-removebg-preview.png" alt="Product 3">
-          <h3>Maglietta blu</h3>
-          <p>Maglietta blu classica con logo</p>
-          <button>Scopri...</button>
-        </div>
-        <div class="card">
-          <img src="images/MagliaRossa-removebg-preview.png" alt="Product 1">
-          <h3>Maglietta rossa</h3>
-          <p>Maglietta rossa classica con logo</p>
-          <button>Scopri...</button>
-        </div>
-      </div>
-      
-      <div>
-        <h2 style="color: #4CAF50;">Cappelli con Logo</h2>
-        <div class="card">
-          <img src="images/BerrettoBianco-removebg-preview.png" alt="Product 1">
-          <h3>Berretto bianco</h3>
-          <p>Berretto bianco con logo</p>
-          <button>Scopri...</button>
-        </div>
-        <div class="card">
-          <img src="images/BerrettoNero-removebg-preview.png" alt="Product 2">
-          <h3>Berretto nero</h3>
-          <p>Berretto nero con logo</p>
-          <button>Scopri...</button>
-        </div>
-        <div class="card">
-          <img src="images/CappelloPescatoreBianco-removebg-preview.png" alt="Product 3">
-          <h3>Cappello da pescatore bianco</h3>
-          <p>Cappello da pescatore bianco con logo</p>
-          <button>Scopri...</button>
-        </div>
-        <div class="card">
-          <img src="images/CappelloPescatoreNero-removebg-preview.png" alt="Product 1">
-          <h3>Cappello da pescatore nero</h3>
-          <p>Cappello da pescatore nero con logo</p>
-          <button>Scopri...</button>
-        </div>
-      </div>
-
-
     </center>
     </body>
     </html>
