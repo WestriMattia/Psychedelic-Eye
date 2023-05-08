@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Creato il: Mag 05, 2023 alle 02:20
--- Versione del server: 8.0.32
--- Versione PHP: 8.2.0
+-- Host: 127.0.0.1
+-- Creato il: Mag 08, 2023 alle 12:04
+-- Versione del server: 10.4.21-MariaDB
+-- Versione PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `foto` (
-  `idFoto` int NOT NULL,
+  `idFoto` int(11) NOT NULL,
   `foto1` varchar(255) DEFAULT NULL,
   `foto2` varchar(255) DEFAULT NULL,
   `foto3` varchar(255) DEFAULT NULL,
   `foto4` varchar(255) DEFAULT NULL,
   `foto5` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `foto`
@@ -51,22 +51,15 @@ INSERT INTO `foto` (`idFoto`, `foto1`, `foto2`, `foto3`, `foto4`, `foto5`) VALUE
 --
 
 CREATE TABLE `login` (
-  `idUtente` int NOT NULL,
+  `idUtente` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `cognome` varchar(255) NOT NULL,
   `indirizzo` varchar(255) NOT NULL,
-  `telefono` bigint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dump dei dati per la tabella `login`
---
-
-INSERT INTO `login` (`idUtente`, `email`, `password`, `nome`, `cognome`, `indirizzo`, `telefono`) VALUES
-(15, 'a@a', 'a', 'a', 'a', 'a', 1),
-(16, 'andreavestri2007@gmail.com', 'sdfg', 'Andrea', 'Vestri', 'Via del Gelsomino 16', 3920992083);
+  `telefono` bigint(20) NOT NULL,
+  `moderatore` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,15 +68,15 @@ INSERT INTO `login` (`idUtente`, `email`, `password`, `nome`, `cognome`, `indiri
 --
 
 CREATE TABLE `prodotto` (
-  `idProdotto` int NOT NULL,
+  `idProdotto` int(11) NOT NULL,
   `nome` char(255) NOT NULL,
   `prezzo` float NOT NULL,
   `descrizione` varchar(255) DEFAULT NULL,
-  `idFoto` int DEFAULT NULL,
-  `idTaglia` int DEFAULT NULL,
+  `idFoto` int(11) DEFAULT NULL,
+  `idTaglia` int(11) DEFAULT NULL,
   `colore` varchar(255) DEFAULT NULL,
   `tipo` char(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `prodotto`
@@ -100,12 +93,12 @@ INSERT INTO `prodotto` (`idProdotto`, `nome`, `prezzo`, `descrizione`, `idFoto`,
 --
 
 CREATE TABLE `taglie` (
-  `idTaglia` int NOT NULL,
-  `xl` int DEFAULT NULL,
-  `l` int DEFAULT NULL,
-  `m` int DEFAULT NULL,
-  `s` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `idTaglia` int(11) NOT NULL,
+  `xl` int(11) DEFAULT NULL,
+  `l` int(11) DEFAULT NULL,
+  `m` int(11) DEFAULT NULL,
+  `s` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `taglie`
@@ -153,25 +146,25 @@ ALTER TABLE `taglie`
 -- AUTO_INCREMENT per la tabella `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `idFoto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `login`
 --
 ALTER TABLE `login`
-  MODIFY `idUtente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idUtente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT per la tabella `prodotto`
 --
 ALTER TABLE `prodotto`
-  MODIFY `idProdotto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idProdotto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `taglie`
 --
 ALTER TABLE `taglie`
-  MODIFY `idTaglia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idTaglia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Limiti per le tabelle scaricate
