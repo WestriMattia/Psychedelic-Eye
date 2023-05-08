@@ -18,6 +18,14 @@
     <title>Prodotto</title>
   </head>
   <body>
+  <?php
+    function taglie(){
+      require_once('connessione.php');
+      $idProdotto = $_SESSION['idProdotto'];
+      $query = "SELECT taglie.* FROM prodotto 
+      INNER JOIN taglie ON taglie.idTaglia=prodotto.idTaglia WHERE prodotto.idProdotto = $idProdotto";
+    }
+  ?>
     <nav class="navbar" style="background-color: black; ">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn lin" onclick="closeNav()">&times;</a>
@@ -43,18 +51,14 @@
           </svg>
         </a>    
     </nav>
-
-
-
-
-
     <?php
 // ...
 if (isset($_GET['idProdotto'])) {
     $idProdotto = $_GET['idProdotto'];
+    $_SESSION['idProdotto'] = $idProdotto;
     require_once('connessione.php');
     // Query per il recupero delle informazioni del prodotto dal database in base all'identificatore univoco
-    $sql = "SELECT idProdotto, colore, nome, prezzo, descrizione, 
+    $sql = "SELECT idProdotto, colore, nome, prezzo, descrizione,
     tipo, taglie.xl, taglie.l, taglie.m, taglie.s, foto.foto1
     FROM prodotto 
     INNER JOIN taglie ON taglie.idTaglia=prodotto.idTaglia
@@ -90,7 +94,7 @@ if (isset($_GET['idProdotto'])) {
     <h2><?php echo $nome; ?></h2>
     <p><strong>Prezzo:</strong><?php echo "$prezzo €"; ?></p>
     
-    <form method="post" action="./prodotto.php">
+    <form method="post" action="./prodotto.php?idProdotto=<?php echo $idProdotto ?>">
       <label for="taglia">Taglia:</label>
       <select require id="taglia" name="taglia" >
         <option  value="S">S</option>
@@ -125,7 +129,7 @@ if(isset($_POST['taglia'])){
 
 switch($taglia){
     case "S":
-        if($quantita>$s){
+        if($quantita>$taglia){
             echo"Errore";
 
         }
@@ -141,7 +145,9 @@ switch($taglia){
     </html>
     
 
-  <script src="myscript.js"></script>
+  <script src="myscript.js">
+    alert("<?php echo taglia() ?>");
+  </script>
   <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
