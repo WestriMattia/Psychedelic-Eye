@@ -19,12 +19,7 @@
   </head>
   <body>
   <?php
-    function taglie(){
-      require_once('connessione.php');
-      $idProdotto = $_SESSION['idProdotto'];
-      $query = "SELECT taglie.* FROM prodotto 
-      INNER JOIN taglie ON taglie.idTaglia=prodotto.idTaglia WHERE prodotto.idProdotto = $idProdotto";
-    }
+    require_once('connessione.php');
   ?>
     <nav class="navbar" style="background-color: black; ">
       <div id="mySidenav" class="sidenav">
@@ -94,7 +89,8 @@ if (isset($_GET['idProdotto'])) {
     <h2><?php echo $nome; ?></h2>
     <p><strong>Prezzo:</strong><?php echo "$prezzo €"; ?></p>
     
-    <form method="post" action="./prodotto.php?idProdotto=<?php echo $idProdotto ?>">
+    <form method="post" action="./cart_adder.php">
+      <input type="hidden" value="<?php $_GET['idProdotto'] ?>" name="idProdotto"> 
       <label for="taglia">Taglia:</label>
       <select require id="taglia" name="taglia" >
         <option  value="S">S</option>
@@ -104,9 +100,9 @@ if (isset($_GET['idProdotto'])) {
       </select>
       <br>
       <label for="quantita">Quantità:</label>
-    
-
+      
       <input require type="number" id="quantita" name="quantita" min="1" max="99" value="1">
+      
       <br>
     <p><strong>Descrizione:</strong><?php echo $descrizione; ?></p>
       <input class='btn btn-success' type="submit" name="submit" value="Aggiungi al carrello">
@@ -137,7 +133,6 @@ switch($taglia){
     }
 }
 
-
 ?>
     
 
@@ -146,7 +141,6 @@ switch($taglia){
     
 
   <script src="myscript.js">
-    alert("<?php echo taglia() ?>");
   </script>
   <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
