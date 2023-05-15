@@ -20,6 +20,7 @@
   <body>
   <?php
     require_once('connessione.php');
+    session_start();
   ?>
     <nav class="navbar" style="background-color: black; ">
       <div id="mySidenav" class="sidenav">
@@ -90,7 +91,7 @@ if (isset($_GET['idProdotto'])) {
     <p><strong>Prezzo:</strong><?php echo "$prezzo €"; ?></p>
     
     <form method="post" action="./cart_adder.php">
-      <input type="hidden" value="<?php $_GET['idProdotto'] ?>" name="idProdotto"> 
+      <input type="hidden" value="<?php  $_SESSION['idProdotto'] ?>" name="idProdotto"> 
       <label for="taglia">Taglia:</label>
       <select require id="taglia" name="taglia" >
         <option  value="S">S</option>
