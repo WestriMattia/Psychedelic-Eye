@@ -25,7 +25,6 @@
         <a class="lin" href="#">Contact</a>
       </div>
 
-      <!-- Use any element to open the sidenav -->
       <span onclick="openNav()"
         ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -60,13 +59,14 @@
             />
           </svg>
           </a>
-  
     </nav>
-      <div class="divt">
-        <a href="./shop.php">
-          <img src="images/home.gif" class="trip">
-        </a>
-      </div>
+
+
+
+
+
+
+    
   </body>
 
   <script src="myscript.js"></script>

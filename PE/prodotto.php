@@ -46,14 +46,14 @@
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
           </svg>
         </a>    
-    </nav>
+    </nav><center>
     <?php
-// ...
+  
+
 if (isset($_GET['idProdotto'])) {
     $idProdotto = $_GET['idProdotto'];
     $_SESSION['idProdotto'] = $idProdotto;
     require_once('connessione.php');
-    // Query per il recupero delle informazioni del prodotto dal database in base all'identificatore univoco
     $sql = "SELECT idProdotto, colore, nome, prezzo, descrizione,
     tipo, taglie.xl, taglie.l, taglie.m, taglie.s, foto.foto1
     FROM prodotto 
@@ -63,7 +63,6 @@ if (isset($_GET['idProdotto'])) {
     $result = mysqli_query($conn, $sql);
     if ($result->num_rows >0) {
         $row = $result->fetch_assoc();
-        // Recupera i valori delle colonne del risultato della query
         $idProdotto = $row['idProdotto'];
         $colore = $row['colore'];
         $nome = $row['nome'];
@@ -79,20 +78,19 @@ if (isset($_GET['idProdotto'])) {
             session_start();
         }
         
-// Visualizza i dettagli del prodotto
 ?>
-<li class='list-group-item'><b>Taglie disponibili:</b> <?php echo "XL: $xl, L: $l, M: $m, S: $s"; ?></li>
-
+<p style="color: white;"><b>Taglie disponibili:</b><br> <?php echo "XL: $xl,<br> L: $l,<br> M: $m,<br> S: $s"; ?>
+      </p>
 
 
 <img src='./images/<?php echo $foto1; ?>'>
     
-    <h2><?php echo $nome; ?></h2>
-    <p><strong>Prezzo:</strong><?php echo "$prezzo €"; ?></p>
+    <h2  style="color: #4CAF50;"><?php echo $nome; ?></h2>
+    <p  style="color: #4CAF50;"><strong>Prezzo: </strong><?php echo "$prezzo €"; ?></p>
     
     <form method="post" action="./cart_adder.php">
       <input type="hidden" value="<?php  $_SESSION['idProdotto'] ?>" name="idProdotto"> 
-      <label for="taglia">Taglia:</label>
+      <label for="taglia"  style="color: #4CAF50;">Taglia: </label>
       <select require id="taglia" name="taglia" >
         <option  value="S">S</option>
         <option value="M">M</option>
@@ -100,12 +98,19 @@ if (isset($_GET['idProdotto'])) {
         <option value="XL">XL</option>
       </select>
       <br>
-      <label for="quantita">Quantità:</label>
       
+
+      <label for="quantita"  style="color: #4CAF50;">Quantità:</label>
+    
       <input require type="number" id="quantita" name="quantita" min="1" max="99" value="1">
-      
-      <br>
-    <p><strong>Descrizione:</strong><?php echo $descrizione; ?></p>
+      <?php
+      if(!empty($_SESSION["err"])){
+  echo"<p style='color:red'>Quantità selezionata non disponibile.</p>
+  <p style='color:red'>Consultare la tabella.</p>";
+  $_SESSION["err"]=null;
+}
+  ?>
+    <p  style="color: #4CAF50;"><strong>Descrizione: </strong><?php echo $descrizione; ?></p>
       <input class='btn btn-success' type="submit" name="submit" value="Aggiungi al carrello">
     </form>
     <?php
@@ -115,28 +120,14 @@ if (isset($_GET['idProdotto'])) {
 } else {
  echo "<p style='color:red'>Nessun prodotto selezionato :(</p>";
 }
-// ...
 
 
-require_once('connessione.php');
 
-if(isset($_POST['taglia'])){
-    $taglia=$_POST['taglia'];
-    $quantita=$_POST['quantita'];
 
-switch($taglia){
-    case "S":
-        if($quantita>$taglia){
-            echo"Errore";
-
-        }
-        break;
-    }
-}
 
 ?>
     
-
+    </center>
     </body>
     </html>
     

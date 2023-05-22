@@ -27,7 +27,6 @@
       <a class="lin" href="#">Contact</a>
     </div>
 
-    <!-- Use any element to open the sidenav -->
     <span onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white"
         class="bi bi-list" viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -48,7 +47,6 @@
     </a>
   </nav>
 
-        <hr class="riga">
         <div  class="registra">
         <h1 class="titolo">Registrazione</h1>
             <form action="registrazione.php" methd="get" class="signin">
@@ -64,9 +62,9 @@
                     <label for="inputAddress">Indirizzo</label>
                     <input type="text" class="form-control" id="inputAddress" name="indirizzo" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="inputAddress2">Telefono</label>
-                    <input type="number" class="form-control" id="inputAddress2" name="telefono" required>
+                    <input type="number"  class="form-control" id="inputAddress2" name="telefono" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -79,6 +77,7 @@
                     </div>
                 </div>
                 <br>
+            <a href="accesso.php"  style="font-family: 'Roboto', sans-serif;">Se possiedi un account accedi</a>  <br><br>
                 <button type="submit" class="btn btn-primary">Registrati</button>
                 <br><br>
 

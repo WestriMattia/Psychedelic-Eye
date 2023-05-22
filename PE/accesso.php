@@ -27,7 +27,6 @@
       <a class="lin" href="#">Contact</a>
     </div>
 
-    <!-- Use any element to open the sidenav -->
     <span onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white"
         class="bi bi-list" viewBox="0 0 16 16">
         <path fill-rule="evenodd"

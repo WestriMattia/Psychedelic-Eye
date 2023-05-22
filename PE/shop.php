@@ -44,6 +44,7 @@
       <center>
 <div>
       <?php
+        session_start();
             $tipo0='';
       require_once('connessione.php');
               
@@ -54,7 +55,6 @@
       INNER JOIN foto ON foto.idFoto=prodotto.idFoto");
       if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            // Recupera i valori delle colonne del risultato della query
             $idProdotto = $row['idProdotto'];
             $colore = $row['colore'];
             $nome = $row['nome'];
@@ -66,10 +66,16 @@
             $m = $row['m'];
             $s = $row['s'];
             $foto1 = $row['foto1'];
-            // Crea la card per il prodotto
             if($tipo=!$tipo0){
               $tipo0=$tipo;
-              ?></div><div>
+              ?></div><div>    
+                <?php
+                if(!empty($_SESSION["err"])){
+                  if ($_SESSION["err"] == 2) {
+                    echo"<p style='color:#4CAF50;'>Prodotto aggiunto correttamente.</p>";
+                  }
+              }
+              ?>
               <h2 style="color: #4CAF50;"><?php echo $row['tipo']; ?></h2>"<?php
             }
             echo "<div class='card'>";
