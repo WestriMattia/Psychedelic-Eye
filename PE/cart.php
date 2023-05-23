@@ -66,7 +66,51 @@
 
 
 
-    
+    <footer>
+<div class="footer-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Informazioni</h3>
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="terminiEcondizioni.html">Termini e condizioni</a></li>
+          <li><a href="policy.html">Politica sulla privacy</a></li>
+          <li><a href="contattaci.html">Contattaci</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>Categorie</h3>
+        <ul>
+          <li><a href="shop.php">Abbigliamento</a></li>   
+          <li><a href="easterEgg/index.php">Spray</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>Seguici</h3>
+        <ul class="social-icons">
+          <li><a href=""><i class="fa fa-instagram">Instagram Vestri</i></a></li>
+          <li><a href=""><i class="fa fa-facebook">Facebook Vestri</i></a></li>
+          <li><a href="https://www.instagram.com/yasminbarbieri_/"><i class="fa fa-instagram">Instagram Apolito</i></a></li>
+          <li><a href=""><i class="fa fa-facebook">Facebook Apolito</i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>&copy; 2023 PSYCHEDELIC-EYE. Tutti i diritti riservati.</p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-right">Realizzato da <a href="#">MATTIA VESTRI & DAVIDE APOLITO</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
   </body>
 
   <script src="myscript.js"></script>

@@ -11,9 +11,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
+
 
 body {
   background-color: black;
@@ -253,3 +251,70 @@ td {
   width: 70px;
 }
 
+footer {
+  background-color: black;
+  padding-top: 50px;
+}
+
+.footer-top {
+  background-color: black;
+  
+}
+
+.footer-top h3 {
+  color: #4CAF50;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-top ul li {
+  margin-bottom: 10px;
+}
+
+.footer-top ul li a {
+  color: #4CAF50;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #4CAF50;
+  font-size: 20px;
+}
+
+.social-icons li a:hover {
+  color: #4CAF50;
+}
+
+.footer-bottom {
+  background-color: black;
+  color: #4CAF50;
+  padding: 10px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #3e8e41;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
