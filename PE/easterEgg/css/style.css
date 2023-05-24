@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Sedgwick+Ave+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@200&display=swap");
+
+.logo {
+  text-align: center;
+}
+.logo-s {
+  text-align: right;
+}
+.logo-m {
+  text-align: left;
+}
+.logo img {
+  width: 1.5rem;
+}
+
+.container-b {
+  text-align: center;
+}
+.title {
+  margin-top: 3rem;
+  font-size: x-large;
+  font-family: "Sedgwick Ave Display", cursive;
+}
+.card-c {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 1px outset rgba(0, 0, 0, 0.233);
+  font-size: 1.5rem;
+}
+.card-c:hover {
+  background-color: rgba(0, 0, 0, 0.164);
+  transition: 1s;
+  box-shadow: 0px 0px 15px -3px #000000;
+}
+.card-c:hover img {
+  transition: 1s;
+  opacity: 1;
+}
+.card-c button:hover {
+  transition: 1.3s;
+  background-color: rgb(245, 168, 26);
+  box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange;
+}
+.card-c button {
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0);
+
+  color: rgb(255, 255, 255);
+  font-size: large;
+  border: none;
+  border-radius: 0.3rem;
+  font-family: "Sedgwick Ave Display", cursive;
+  position: relative;
+  top: -5%;
+}
+.card-c p {
+  position: relative;
+  top: -5%;
+  font-family: "Sedgwick Ave Display", cursive;
+}
+.card-c img {
+  width: 85%;
+}
+.map {
+  text-align: center;
+}
+.map iframe {
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+/*Media Queri*/
+
+/* (320x480) iPhone (Original, 3G, 3GS) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* insert styles here */
+}
+
+/* (320x480) Smartphone, Portrait */
+@media only screen and (device-width: 320px) and (orientation: portrait) {
+  /* insert styles here */
+}
+
+/* (320x480) Smartphone, Landscape */
+@media only screen and (device-width: 480px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (480x800) Android */
+@media only screen and (min-device-width: 480px) and (max-device-width: 800px) {
+  /* insert styles here */
+}
+
+/* (640x960) iPhone 4 & 4S */
+@media only screen and (min-device-width: 640px) and (max-device-width: 960px) {
+  /* insert styles here */
+}
+
+/* (720x1280) Galaxy Nexus, WXGA */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
+  /* insert styles here */
+}
+
+/* (720x1280) Galaxy Nexus, Landscape */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (1024x768) iPad 1 & 2, XGA */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* insert styles here */
+}
+
+/* (768x1024) iPad 1 & 2, Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* insert styles here */
+}
+
+/* (1024x768) iPad 1 & 2, Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (2048x1536) iPad 3 */
+@media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
+  /* insert styles here */
+}
+
+/* (1280x720) Galaxy Note 2, WXGA */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
+  /* insert styles here */
+}
+
+/* (1366x768) WXGA Display */
+@media screen and (max-width: 1366px) {
+  /* insert styles here */
+}
+
+/* (1280x1024) SXGA Display */
+@media screen and (max-width: 1280px) {
+  /* insert styles here */
+}
+
+/* (1440x900) WXGA+ Display */
+@media screen and (max-width: 1440px) {
+}
+
+/* (1680x1050) WSXGA+ Display */
+@media screen and (max-width: 1680px) {
+  /* insert styles here */
+}
+
+/* (1920x1080) Full HD Display */
+@media screen and (max-width: 1920px) {
+  /* insert styles here */
+}
+
+/* (1600x900) HD+ Display */
+@media screen and (max-width: 1600px) {
+  /* insert styles here */
+}
+
+.sidenav {
+  text-align: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgb(250, 250, 250);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav2 {
+  text-align: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  background-color: rgb(250, 250, 250);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 1rem 1rem 1rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav2 a {
+  padding: 1rem 1rem 1rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+.sidenav2 .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 30px;
+  margin-right: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.carousel-i p {
+  font-family: "Chivo Mono", monospace !important;
+}
+
+.carousel-item {
+  margin-bottom: 2.5rem;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.content-modal {
+  border-radius: 4px;
+  position: relative;
+  width: 600px;
+  background: #ffffff;
+  padding: 80px 10px;
+  text-align: center;
+  font-family: helvetica;
+  border: 15px solid #111;
+}
+
+.card-s {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  background-color: rgb(250, 250, 250);
+}
+.card-s:hover {
+  background-color: rgb(250, 250, 250);
+  transition: 1s;
+  box-shadow: 3px 3px 20px -10px #000000;
+}
+
+.card-s button:hover {
+  transition: 0.7s;
+  background-color: rgb(211, 147, 28);
+  box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange;
+}
+.card-s button {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 0px 20px -12px #000000;
+
+  color: rgb(0, 0, 0);
+  font-size: large;
+  border: none;
+  border-radius: 0.3rem;
+  font-family: "Sedgwick Ave Display", cursive;
+  position: relative;
+  top: -5%;
+}
+.card-s p {
+  position: relative;
+  top: -5%;
+  font-family: "Sedgwick Ave Display", cursive;
+}
+.card-s img {
+  width: 85%;
+}
+.story {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.foo {
+  background-color: rgb(250, 250, 250);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0px 0px 2px #000; 
+}
+
+
+
+.line{
+  width: 100%; 
+  box-shadow: 0px 0px 2px #000; 
+  margin-top: 1rem;
+}
+.backS{
+  width: 100%; 
+  margin-top: 2.5rem;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+.cardsLink{
+  color: #000;
+  text-decoration: none;
+}
+.cardsLink:hover{
+  color: #000;
+}
+.cardsImgS{
+  padding: 1.5rem;
+}
+.card-bg{
+ background-color: #9898985e;
+}
+.card{
+  width: 100% !important;
+  height: 100% !important;
+}
+.card img{
+  height: 60% !important;
+}
+
+.inputS{
+  color: white;
+  background-color:rgb(0, 0, 0);
+  font-size: small;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 7px 7px;
+  text-decoration: none;
+  margin: 1px 1px;
+  cursor: pointer;
+}
+
+.ringrShop{
+  font-size: 200%!important;
+}
+
+.cartCard{
+  width: 60%;
+  height: 20rem;
+}
+
+.foo a {
+  color: rgb(122, 118, 118);
+}

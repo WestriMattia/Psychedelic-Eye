@@ -1,0 +1,35 @@
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+        	next = items[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "15rem";
+  document.getElementById("mySidenav2").style.width = "0";
+}
+  
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function openNav2() {
+  document.getElementById("mySidenav2").style.width = "25rem";
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function closeNav2() {
+  document.getElementById("mySidenav2").style.width = "0";
+}
